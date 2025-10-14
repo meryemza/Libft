@@ -6,13 +6,14 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 16:59:36 by mezahir           #+#    #+#             */
-/*   Updated: 2025/10/14 17:00:58 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/10/14 17:22:10 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void ft_bzero(void *s, size_t n)
+
+void	ft_bzero(void *s, size_t n)
 {
-    ft_memset(s, 0, n);
-        return;
+	ft_memset(s, 0, n);
+	return ;
 }
