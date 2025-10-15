@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 23:22:48 by mezahir           #+#    #+#             */
-/*   Updated: 2025/10/15 10:26:03 by mezahir          ###   ########.fr       */
+/*   Created: 2025/10/15 10:26:48 by mezahir           #+#    #+#             */
+/*   Updated: 2025/10/15 10:45:49 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char *ft_strrchr(const char *s, int c)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    int n;
-    n = ft_strlen(s);
-    while(n >= 0)
-    {
-        if(s[n] == (char)c)
-        return (char *)(s + n);
-        n--;
-    }
-    return NULL;
+size_t  i;
+i = 0;
+if(n == 0)
+return 0;
+
+while(s1[i] == s2[i] && s1[i] && s2[i] &&  i < n )
+    i++;
+return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+
 }
 /*
 int main()
 {
-    char * ptr = "meryem";
-    char *p ;
-    p = ft_strrchr(ptr,69);
-    printf("%s" ,p);
+
+    char *p = "meryem";
+    char *p2 = "mahir";
+    int k ;
+     k = ft_strncmp(p, p2, 3);
+     printf("%d", k);
 }
-    */
+ */

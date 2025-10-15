@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_ memchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 23:22:48 by mezahir           #+#    #+#             */
-/*   Updated: 2025/10/15 10:26:03 by mezahir          ###   ########.fr       */
+/*   Created: 2025/10/15 10:46:18 by mezahir           #+#    #+#             */
+/*   Updated: 2025/10/15 11:26:29 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char *ft_strrchr(const char *s, int c)
+
+void    *ft_memchr(const void *s, int c, size_t n)
 {
-    int n;
-    n = ft_strlen(s);
-    while(n >= 0)
+    size_t i;
+    i = 0;
+    while(i < n)
     {
-        if(s[n] == (char)c)
-        return (char *)(s + n);
-        n--;
+        if(((unsigned char *)s)[i] == (unsigned char)c)
+        	
+            return ((void *)(s + i));
+        i++;
     }
     return NULL;
 }
 /*
-int main()
+int main(void)
 {
-    char * ptr = "meryem";
-    char *p ;
-    p = ft_strrchr(ptr,69);
-    printf("%s" ,p);
+    unsigned char p[] = {1, 2, 4, 5};
+    unsigned char *n;
+
+    n = ft_memchr(p, 2, 4); 
+
+        printf("Trouvé : %d\n", *n); 
+
+    return 0;
 }
-    */
+*/
