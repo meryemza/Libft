@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 09:41:38 by mezahir           #+#    #+#             */
-/*   Updated: 2025/10/21 14:22:01 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/10/21 20:30:24 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@
     
     while(s[i])
     {
-         while(s[i] == c && s[i])
+         while( s[i] && s[i] == c)
             i++;
-        if(s[i] != c && s[i]) 
+        if( s[i] && s[i] != c) 
             count++;
-        while(s[i] != c && s[i])  
+        while(s[i] && s[i] != c)  
             i++;
     }
     return (count);
@@ -38,24 +38,21 @@
      unsigned int j;
     
     j = 0;
-    while(j < len_w)
+    while(len_w > 0)
     {
      p[j] = s[i - len_w];
      len_w--;
-     j++;
-        
+     j++;  
     }
     p[j] = '\0';
     return p;
  }
  static char **ft_free(char **p,unsigned int word)
  {
-    unsigned int i ;
-    i = 0;
-    while(i < word)
+    while(word > 0)
     {
-        free(p[i]);
-        i++;
+        word--;
+        free(p[word]);
     }
     free(p);
     return NULL;
@@ -71,14 +68,14 @@
     len_w = 0;
     while(word < count_w)
     {
-        while(s[i] == c && s[i])
+        while( s[i] && s[i] == c)
             i++;
-        while(s[i] != c && s[i])
+        while( s[i] && s[i] != c)
         {
             len_w++;
             i++;
         }
-    p[word] = malloc(sizeof(char *) * (len_w + 1));
+    p[word] = malloc(sizeof(char) * (len_w + 1));
     if(p[word] == NULL)
     return (ft_free(p,word));
     p[word] = ft_fill_word(len_w ,p[word],i,s);
@@ -94,17 +91,21 @@ char **ft_split(char const *s, char c)
 unsigned int  count_w ;
 char **p;
 
+if (!s)
+    return (NULL);
 count_w = ft_count_word(s, c);
 p = malloc(sizeof(char *) * (count_w + 1));
 if(!p)
-return NULL;
+    return NULL;
 p = ft_div_word(s,count_w ,p,c);
 return p;
 }
+
+/*
 int main()
 {
     int i = 0;
-    char *p = "hi meryem zahir     ";
+    char *p = "    hi    meryem  M zahir  ";
     char c = ' ';
     char **pr;
     pr = ft_split(p,c);
@@ -114,10 +115,6 @@ int main()
             printf("%s",pr[i]);
             printf("\n");
             i++;
-    }
-
-    
-    
-    
-    
+    } 
 }
+    */
