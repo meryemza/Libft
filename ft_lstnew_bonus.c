@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 09:36:15 by mezahir           #+#    #+#             */
-/*   Updated: 2025/10/22 15:00:43 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/10/28 21:16:50 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstnew(void *content)
 	t_list	*node;
 
 	node = malloc(sizeof(t_list));
-	if(!node)
+	if (!node)
 		return (NULL);
 	node->content = content;
 	node->next = NULL;
