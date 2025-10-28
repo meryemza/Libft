@@ -14,35 +14,38 @@
 #include <stdlib.h>
 #include <string.h>
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-    if(!lst || !del)
-        return;
-    t_list *p ;
-    while(*lst != NULL)
-    {
-        p = (*lst) -> next;
-        ft_lstdelone(*lst,del);
-         *lst = p;
-    }
-    *lst = NULL;
-    
+	t_list	*p;
+
+	if (!lst || !del)
+		return ;
+	while (*lst != NULL)
+	{
+		p = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = p;
+	}
+	*lst = NULL;
 }
 
 /*
-void dell(void *content)
-    {
-        free(content);
-    }
+void	dell(void *content)
+	{
+		free(content);
+	}
 
-int main()
+int	main(void)
 {
-     t_list *head;
-    head = NULL; 
-    t_list *k = ft_lstnew(strdup("zahir"));
-     t_list *m = ft_lstnew(strdup("meryem"));
-    head = k;
-    k -> next = m;
-    ft_lstclear(&head,dell);
+		t_list *head;
+	t_list	*k;
+	t_list	*m;
+
+	head = NULL;
+	k = ft_lstnew(strdup("zahir"));
+		m = ft_lstnew(strdup("meryem"));
+	head = k;
+	k -> next = m;
+	ft_lstclear(&head,dell);
 }
 */

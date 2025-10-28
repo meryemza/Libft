@@ -11,34 +11,36 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>   
 #include <fcntl.h>
+#include <unistd.h>
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    int i;
-    if(!s)
-    return;
-    if(fd != -1)
-    {
-   i = 0;
-   while(s[i])
-   {
-     write(fd,&s[i],1);
-     i++;
-   }
-   }
+	int	i;
+
+	if (!s)
+		return ;
+	if (fd != -1)
+	{
+		i = 0;
+		while (s[i])
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
+	}
 }
-   /*
-int main()
+/*
+int	main(void)
 {
-    char *s =  "meryem";
-    int fd = open("ecrit.text", O_WRONLY | O_CREAT  ,0644);
+	char	*s;
+	int		fd;
 
-    if(fd == -1)
-    return (perror("open"),1);
-    ft_putstr_fd(s,fd);
-     close(fd);
-
+ s = "meryem";
+ fd = open("ecrit.text", O_WRONLY | O_CREAT  ,0644);
+ if(fd == -1)
+ return (perror("open"),1);
+ ft_putstr_fd(s,fd);
+  close(fd);
 }
 */

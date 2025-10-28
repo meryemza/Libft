@@ -1,50 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 14:45:11 by mezahir           #+#    #+#             */
-/*   Updated: 2025/10/25 12:49:09 by mezahir          ###   ########.fr       */
+/*   Created: 2025/10/23 14:21:50 by mezahir           #+#    #+#             */
+/*   Updated: 2025/10/23 22:58:12 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int	ft_atoi(const char *nptr)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int				i;
-	int				s;
-	unsigned long	n;
-
-	i = 0;
-	s = 1;
-	n = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '+')
-		i++;
-	else if (nptr[i] == '-')
+	if (!lst || !f)
+		return ;
+	while (lst)
 	{
-		s = -1;
-		i++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		n = n * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (n * s);
 }
+
 /*
+void	f(void *content)
+{
+if(content)
+printf("%d\n",*(int *)content);
+}
+
 int	main(void)
 {
-	char	*nptr;
-	int		k;
+	t_list	*head;
+	int		a;
+	int		b;
+	t_list	*n1;
+	t_list	*n2;
 
-	nptr = "    -12356MERYEM";
-	k = ft_atoi(nptr);
-	printf("%d",k);
+	head = NULL;
+	a = 65;
+	b = 76;
+	n1 = ft_lstnew(&a);
+	n2 = ft_lstnew(&b);
+	head = n1;
+	n1 -> next = n2;
+	ft_lstiter(head,f);
 }
 */

@@ -6,16 +6,15 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 16:08:54 by mezahir           #+#    #+#             */
-/*   Updated: 2025/10/17 16:15:51 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/10/25 13:54:00 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-if(fd != -1)
-write(fd,&c,1);
-
+	if (fd != -1)
+		write(fd, &c, 1);
 }

@@ -13,21 +13,24 @@
 #include "libft.h"
 #include <stdlib.h>
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-    t_list *node;
-    node = malloc(sizeof(t_list));
-     node -> content = content;
-     node -> next = NULL;
-     return (node);
-    
+	t_list	*node;
+
+	node = malloc(sizeof(t_list));
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
 /*
-int main()
+int	main(void)
 {
-    char *m = "mery";
-    t_list *k = ft_lstnew(m);
-    printf("%s",(char *)(k -> content));
-    free(k);
+	char	*m;
+	t_list	*k;
+
+	m = "mery";
+	k = ft_lstnew(m);
+	printf("%s",(char *)(k -> content));
+	free(k);
 }
-    */
+	*/

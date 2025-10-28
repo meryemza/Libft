@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:35:02 by mezahir           #+#    #+#             */
-/*   Updated: 2025/10/15 18:34:53 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/10/28 12:12:17 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,37 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-void    *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-    void *p;
-    if (nmemb != 0 && size  > SIZE_MAX / nmemb)
-    return (NULL);
-  if (nmemb == 0 || size == 0)
-  {
-		p = malloc (1);
+	void	*p;
+
+	if (nmemb != 0 && size > SIZE_MAX / nmemb)
+		return (NULL);
+	if (nmemb == 0 || size == 0)
+	{
+		p = malloc(1);
+		if (!p)
+			return (NULL);
 		ft_bzero(p, 1);
 		return (p);
 	}
-p = malloc(nmemb * size);
-if (!p)
+	p = malloc(nmemb * size);
+	if (!p)
 		return (NULL);
-  ft_bzero(p,(nmemb * size));
-    return (p);
+	ft_bzero(p, (nmemb * size));
+	return (p);
 }
-/*
-int main()
-{
-     char *ptr ;
-     ptr = (char *) ft_calloc(5, sizeof(int));
-     printf("%p",ptr);
-     
-}
-*/
+
+// int	main(void)
+// {
+// 		char *ptr ;
+// 		char *tr ;
+// 		ptr = (char *)calloc(0, 0);
+// 		tr = (char *)ft_calloc(0, 0);
+// 		printf("dialhom  %p\n",ptr);
+// 		printf("diali  %p",tr);
+// 		if(ptr)
+// 			free(ptr);
+// 		if (tr)
+// 			free(tr);
+// }

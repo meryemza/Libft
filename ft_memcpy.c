@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ memcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 16:59:18 by mezahir           #+#    #+#             */
-/*   Updated: 2025/10/14 20:07:48 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/10/28 12:19:51 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	char	*d;
-	char	*s;
+	size_t			i;
+	unsigned char	*d;
+	unsigned char	*s;
 
 	i = 0;
-	d = (char *)dest;
-	s = (char *)src;
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
 	if (!d && !s)
 		return (NULL);
 	if (d == s || n == 0)
@@ -36,18 +36,18 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 int	main(void)
 {
 	char	*ptr;
-    char ppi[13] = "zahir";
+	char	ppi[13] = "zahir";
 	size_t	i;
 	size_t	j;
 
-    ptr = "meryem";
-    i = 3;
-    j = 0;
-    ft_memcpy(ppi, ptr, i);
-    while(ppi[j])
+	ptr = "meryem";
+	i = 3;
+	j = 0;
+	ft_memcpy(ppi, ptr, i);
+	while(ppi[j])
 {
-    printf("%c",ppi[j]);
-    j++;
+	printf("%c",ppi[j]);
+	j++;
 }
 return (0);
 
