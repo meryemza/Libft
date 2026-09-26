@@ -1,57 +1,85 @@
-Libft
+# Libft
 
-My own C library — 42 School Common Core
+*This project has been created as part of the 42 curriculum by `Mezahir`.*
 
-Libft is my first project at 42, where I recreated a set of functions from the C standard library and implemented additional utility functions from scratch.
+## 1. Description:
 
-The goal was to build a reusable static library while strengthening my understanding of C, memory management, pointers, strings, linked lists and Makefiles.
+`Libft` is a C project that consists of creating a personal static library by reimplementing a set of functions from the C standard library and implementing additional utility functions from scratch.
 
+The library provides functions for character handling, memory manipulation, string processing, conversions, file descriptor output, and linked-list operations.
 
-Compilation
+The goal of this project is to build a reusable C library while strengthening my understanding of C programming, pointers, memory management, strings, linked lists, and Makefiles.
 
-Build the library
+## 2. Instructions:
+
+### - Compilation :
+
+Build the mandatory part of the library:
+
+```bash
 make
+```
 
-This generates:
+This generates the static library:
 
+```text
 libft.a
-Build the bonus functions
+```
+
+Build the bonus part:
+
+```bash
 make bonus
-Remove object files
+```
+
+Remove object files:
+
+```bash
 make clean
-Remove object files and the library
+```
+
+Remove object files and the library:
+
+```bash
 make fclean
-Rebuild everything
+```
+
+Rebuild everything:
+
+```bash
 make re
+```
 
-
-Usage
+### - Usage :
 
 Include the library header:
 
+```c
 #include "libft.h"
+```
 
-Compile your program with libft.a:
+Compile your program with `libft.a`:
 
+```bash
 cc main.c libft.a -o program
+```
 
-Run:
+Run the program:
 
+```bash
 ./program
-
-Key Concepts
+```
+## 4. Key concepts:
 
 This project strengthened my understanding of:
 
-C pointers and pointer arithmetic
-Dynamic memory allocation
-Memory manipulation
-String handling
-Linked-list data structures
-Static libraries
-Makefiles and build automation
-Compiler flags
-Edge cases and error handling
-42 Norminette standards
-
-
+* C pointers and pointer arithmetic
+* Dynamic memory allocation
+* Memory manipulation
+* String handling
+* Linked-list data structures
+* Static libraries
+* Makefiles and build automation
+* Compiler flags
+* Edge cases and error handling
+* 42 Norminette standards
