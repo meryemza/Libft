@@ -6,7 +6,7 @@
 
 `Libft` is a C project that consists of creating a personal static library by reimplementing a set of functions from the C standard library and implementing additional utility functions from scratch.
 
-The library provides functions for character handling, memory manipulation, string processing, conversions, file descriptor output, and linked-list operations.
+The library provides functions for character handling, memory manipulation, string processing, conversions, and linked-list operations.
 
 The goal of this project is to build a reusable C library while strengthening my understanding of C programming, pointers, memory management, strings, linked lists, and Makefiles.
 
