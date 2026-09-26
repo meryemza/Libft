@@ -1,6 +1,6 @@
 # Libft
 
-*This project has been created as part of the 42 curriculum by `Mezahir`.*
+*This project has been created as part of the 42 curriculum.*
 
 ## 1. Description:
 
